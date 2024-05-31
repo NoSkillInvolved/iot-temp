@@ -1,0 +1,12 @@
+services:
+  mosquitto-broker:
+    restart: always
+    image: eclipse-mosquitto
+    container_name: mosquitto_container
+    ports:
+      - 1883:1883
+    volumes:
+      - ./volumes/mosquitto/start.sh:/start.sh
+      - ./volumes/mosquitto/config:/mosquitto/config
+      - ./volumes/mosquitto/data:/mosquitto/data
+      - ./volumes/mosquitto/log:/mosquitto/log
